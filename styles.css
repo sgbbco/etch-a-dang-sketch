@@ -1,0 +1,20 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.canvas-container {
+  height: 600px;
+  width: 1200px;
+  background-color: rgb(212, 212, 212);
+  display: grid;
+  border-bottom: 1px solid rgb(190, 190, 190);
+  border-right: 1px solid rgb(190, 190, 190);
+}
+
+.grid-square {
+  border-top: 1px solid rgb(190, 190, 190);
+  border-left: 1px solid rgb(190, 190, 190);
+}
