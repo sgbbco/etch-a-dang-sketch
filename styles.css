@@ -5,9 +5,28 @@
   padding: 0;
 }
 
+body {
+  display: flex;
+}
+
+.app-container {
+  flex: 1;
+  max-width: 1200px;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.settings-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
 .canvas-container {
+  flex: 1;
   height: 600px;
-  width: 1200px;
   background-color: rgb(212, 212, 212);
   display: grid;
   border-bottom: 1px solid rgb(190, 190, 190);
@@ -17,4 +36,29 @@
 .grid-square {
   border-top: 1px solid rgb(190, 190, 190);
   border-left: 1px solid rgb(190, 190, 190);
+  transition: all 0.25s ease;
 }
+
+.grid-square.hover {
+  background-color: rgb(189, 189, 189);
+}
+
+.grid-square.draw {
+  background-color: rgb(34, 34, 34);
+}
+
+.canvas-shake {
+  animation-name: shake;
+  animation-duration: 0.8s;
+}
+
+@keyframes shake {
+  0%   {transform:rotate(0deg)}
+  25%  {transform:rotate(-5deg)}
+  50%  {transform:rotate(5deg)}
+  75%  {transform:rotate(-5deg)}
+  100% {transform:rotate(0deg)}
+}
+
+
+
