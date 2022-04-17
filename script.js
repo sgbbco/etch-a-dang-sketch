@@ -1,6 +1,8 @@
 const canvasContainer = document.querySelector('.canvas-container');
 const slider = document.querySelector('#grid-slider');
 const gridSizeLabel = document.querySelector('.grid-size-label');
+
+//Variable ratio - wanted to experiment with a wide format
 const gridRatio = 2; //Ratio of 1:gridRatio
 
 
