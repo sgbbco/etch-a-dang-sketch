@@ -36,7 +36,7 @@ body {
 .grid-square {
   border-top: 1px solid rgb(190, 190, 190);
   border-left: 1px solid rgb(190, 190, 190);
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
 }
 
 .grid-square.hover {
@@ -49,16 +49,13 @@ body {
 
 .canvas-shake {
   animation-name: shake;
-  animation-duration: 0.8s;
+  animation-duration: 0.7s;
 }
 
 @keyframes shake {
-  0%   {transform:rotate(0deg)}
-  25%  {transform:rotate(-5deg)}
-  50%  {transform:rotate(5deg)}
-  75%  {transform:rotate(-5deg)}
-  100% {transform:rotate(0deg)}
+  0%   {transform:rotate(0deg); position:relative; top:0px;}
+  25%  {transform:rotate(-5deg); position:relative; top:-75px;}
+  50%  {transform:rotate(5deg); position:relative; top:0px;}
+  75%  {transform:rotate(-5deg); position:relative; top:-75px;}
+  100% {transform:rotate(0deg); position:relative; top:0px;}
 }
-
-
-

@@ -60,7 +60,9 @@ function addSquares(gridSize) {
 shakeButton.addEventListener('click',shakeCanvas);
 
 function shakeCanvas() {
-  changeGridSize(currentSize);
+  const squares = document.querySelectorAll('.grid-square');
+  squares.forEach((square) => square.classList.remove('draw'))
+
   canvasContainer.classList.add('canvas-shake');
   canvasContainer.addEventListener('animationend', ()=>{
     canvasContainer.classList.remove('canvas-shake');
