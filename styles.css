@@ -87,7 +87,7 @@ body {
 
 .canvas-container {
   flex: 1;
-  height: 480px;
+  height: 450px;
   background-color: rgb(212, 212, 212);
   display: grid;
   border-bottom: 1px solid #0000003e;

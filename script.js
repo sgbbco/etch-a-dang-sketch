@@ -126,7 +126,7 @@ function setBg(e){
   };
 };
 
-function darkenBackground (e) {
+function darkenBackground(e) {
   //If there's no bg colour on the square, set it to the lightest tint
   if(e.target.style.backgroundColor === "") {
     e.target.style.backgroundColor = "rgb(200, 200, 200)";
