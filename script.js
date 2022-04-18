@@ -10,13 +10,13 @@ const modeSelector = document.querySelector('#mode-selector');
 const gridRatio = 2; //Ratio of 1:gridRatio
 
 let mouseDown = false
-canvasContainer.onmousedown = () => {mouseDown = true; console.log("Mouse is down")};
-canvasContainer.onmouseup = () => {mouseDown = false; console.log("Mouse is up")};
+canvasContainer.onmousedown = () => mouseDown = true;
+canvasContainer.onmouseup = () => mouseDown = false;
 
 
 let colorChoice = "Classic";
 colorSelector.textContent = colorChoice;
-colorSelector.addEventListener('click',setColor)
+colorSelector.addEventListener('click',setColor);
 
 function setColor () {
   if (colorChoice === "Classic") {
@@ -28,12 +28,12 @@ function setColor () {
   } else if (colorChoice === "Tint") {
     colorChoice = "Classic";
     colorSelector.textContent = colorChoice;
-  } 
-}
+  };
+};
 
 let drawMode = "Draw";
 modeSelector.textContent = drawMode;
-modeSelector.addEventListener('click',setMode)
+modeSelector.addEventListener('click',setMode);
 
 function setMode () {
   if (drawMode === "Draw") {
@@ -42,12 +42,12 @@ function setMode () {
   } else {
     drawMode = "Draw";
     modeSelector.textContent = drawMode;
-  }
-}
+  };
+};
 
 let currentSize = 12;
 //Input default canvas settings
-defaultCanvas(currentSize,5,50)//starting rows, min rows , max rows
+defaultCanvas(currentSize,5,50);//starting rows, min rows , max rows
 
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function sliderInput() {
@@ -106,7 +106,7 @@ function mousetrail(e) {
  }
  e.target.classList.add('hover');
  e.target.addEventListener('transitionend', ()=>{
-   e.target.classList.remove('hover')
+   e.target.classList.remove('hover');
   });
 };
 
@@ -119,12 +119,12 @@ function setBg(e){
       e.target.style.backgroundColor = "#" + randomColor;
     } else if (colorChoice === "Tint"){
       darkenBackground (e);
-    }
+    };
   //If drawMode is not 'draw', assume it's 'erase' and remove the backbround colour
   } else {
     e.target.style.backgroundColor = "";
-  }
-}
+  };
+};
 
 function darkenBackground (e) {
   //If there's no bg colour on the square, set it to the lightest tint
@@ -148,6 +148,6 @@ function darkenBackground (e) {
     //If it's a colour other than grey, also set it to the lightest tint
     } else {
       e.target.style.backgroundColor = "rgb(200, 200, 200)";
-    }
-  }
-}
+    };
+  };
+};
