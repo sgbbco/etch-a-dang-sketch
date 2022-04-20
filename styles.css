@@ -13,10 +13,19 @@ body {
 
 .window {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  padding: 30px;
+}
+
+.app-container {
+  flex: 1;
+  max-width: 1000px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .app-border {
@@ -28,16 +37,17 @@ body {
 
 .app-title {
   border-radius: 16px;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 25px;
   font-family: 'Mrs Sheppards';
   font-size: 50px;
   color: #fdb86a;
   text-shadow: 0px 1px #0000002a; 
+  line-height: 80%;
 }
 
 .settings-container {
+  flex-flow: wrap;
   align-items: center;
   color: #fdb86a;
   display: flex;
@@ -66,13 +76,6 @@ body {
   background-color: #ffcb90;
 }
 
-.app-container {
-  width: 1000px;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
 .control-container {
   display: flex;
