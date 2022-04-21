@@ -5,6 +5,8 @@ const shakeButton = document.querySelector('#shake-button');
 const appContainer = document.querySelector('.app-container');
 const colorSelector = document.querySelector('#color-selector');
 const modeSelector = document.querySelector('#mode-selector');
+const colorControl = document.querySelector('#color-control');
+
 
 //Variable ratio - wanted to experiment with a wide format, has to be whole numbers or we get weird sized squares
 const gridRatio = 2; //Ratio of 1:gridRatio
@@ -17,6 +19,19 @@ let colorChoice = "Classic";
 colorSelector.textContent = colorChoice;
 colorSelector.addEventListener('click',setColor);
 
+
+
+const colorPicker = document.createElement('input');
+colorPicker.setAttribute('type','color','class','picker');
+colorPicker.addEventListener('input',pickColor);
+
+let pickedColor = "#000"
+
+function pickColor(e){
+  console.log(e.target.value);
+  pickedColor = e.target.value;
+}
+
 function setColor () {
   if (colorChoice === "Classic") {
   colorChoice = "Rainbow";
@@ -25,7 +40,11 @@ function setColor () {
   } else if (colorChoice === "Tint") {
     colorChoice = "70s";
   } else if (colorChoice === "70s") {
+    colorChoice = "Picker";
+    colorControl.appendChild(colorPicker);
+  } else if (colorChoice === "Picker") {
     colorChoice = "Classic";
+    colorControl.removeChild(colorPicker);
   };
   colorSelector.textContent = colorChoice;
 };
@@ -121,6 +140,8 @@ function setBg(e){
       tintBg(e);
     } else if (colorChoice === "70s"){
       colourSwatches(e);
+    } else if (colorChoice === "Picker"){
+      e.target.style.backgroundColor = pickedColor;
   };
   //If drawMode is not 'draw', assume it's 'erase' and remove the backbround colour
   } else {
