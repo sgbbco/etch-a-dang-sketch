@@ -21,14 +21,12 @@ colorSelector.addEventListener('click',setColor);
 function setColor () {
   if (colorChoice === "Classic") {
   colorChoice = "Rainbow";
-  colorSelector.textContent = colorChoice;
   } else if (colorChoice === "Rainbow") {
   colorChoice = "Tint";
-  colorSelector.textContent = colorChoice;
   } else if (colorChoice === "Tint") {
     colorChoice = "Classic";
-    colorSelector.textContent = colorChoice;
   };
+  colorSelector.textContent = colorChoice;
 };
 
 let drawMode = "Draw";
