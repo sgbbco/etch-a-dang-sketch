@@ -36,11 +36,10 @@ modeSelector.addEventListener('click',setMode);
 function setMode () {
   if (drawMode === "Draw") {
     drawMode = "Erase";
-    modeSelector.textContent = drawMode;
   } else {
     drawMode = "Draw";
-    modeSelector.textContent = drawMode;
   };
+  modeSelector.textContent = drawMode;
 };
 
 let currentSize = 12;
