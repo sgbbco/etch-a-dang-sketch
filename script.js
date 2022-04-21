@@ -23,10 +23,14 @@ function setColor () {
   } else if (colorChoice === "Rainbow") {
   colorChoice = "Tint";
   } else if (colorChoice === "Tint") {
+    colorChoice = "70s";
+  } else if (colorChoice === "70s") {
     colorChoice = "Classic";
   };
   colorSelector.textContent = colorChoice;
 };
+
+
 
 let drawMode = "Draw";
 modeSelector.textContent = drawMode;
@@ -87,13 +91,13 @@ function addSquares(gridSize) {
 
 shakeButton.addEventListener('click',shakeCanvas);
 
+//adds a class containing an animation
 function shakeCanvas() {
   const squares = document.querySelectorAll('.grid-square');
-  squares.forEach(square => square.style.backgroundColor = "")
+  squares.forEach(square => square.style.backgroundColor = "");
   appContainer.classList.add('canvas-shake');
-  appContainer.addEventListener('animationend', ()=>{
-    appContainer.classList.remove('canvas-shake');
-   });
+  //when the animation is finished, remove the class so it's ready to run again
+  appContainer.addEventListener('animationend',() => appContainer.classList.remove('canvas-shake'));
 };
 
 function mousetrail(e) {
@@ -101,9 +105,7 @@ function mousetrail(e) {
   setBg(e);
  }
  e.target.classList.add('hover');
- e.target.addEventListener('transitionend', ()=>{
-   e.target.classList.remove('hover');
-  });
+ e.target.addEventListener('transitionend',() => e.target.classList.remove('hover'));
 };
 
 //Change the background colour of the squares
@@ -117,12 +119,23 @@ function setBg(e){
       e.target.style.backgroundColor = "#" + randomColor;
     } else if (colorChoice === "Tint"){
       tintBg(e);
-    };
+    } else if (colorChoice === "70s"){
+      colourSwatches(e);
+  };
   //If drawMode is not 'draw', assume it's 'erase' and remove the backbround colour
   } else {
     e.target.style.backgroundColor = "";
   };
 };
+
+let colorSelection = 0;
+
+function colourSwatches(e) {
+  const colours = ["#3F8A8C", "#0C5679", "#0B0835",	"#E5340B","#F28A0F", "#FFE7BD"];
+  if(colorSelection > colours.length - 1){colorSelection = 0}; 
+  e.target.style.backgroundColor = colours[colorSelection];
+  colorSelection++;
+}
 
 //This function is used for the 'Tint' draw mode
 function tintBg(e) {
