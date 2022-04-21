@@ -13,7 +13,6 @@ let mouseDown = false
 canvasContainer.onmousedown = () => mouseDown = true;
 canvasContainer.onmouseup = () => mouseDown = false;
 
-
 let colorChoice = "Classic";
 colorSelector.textContent = colorChoice;
 colorSelector.addEventListener('click',setColor);
@@ -46,13 +45,6 @@ let currentSize = 12;
 //Input default canvas settings
 defaultCanvas(currentSize,5,50);//starting rows, min rows , max rows
 
-// Update the current slider value (each time you drag the slider handle)
-slider.oninput = function sliderInput() {
-  gridSizeLabel.textContent = `Grid size: ${this.value} x ${this.value * gridRatio}`;
-  currentSize = this.value;
-  changeGridSize(this.value);
-};
-
 //Setup default canvas
 function defaultCanvas(size,min,max) {
   changeGridSize(size);
@@ -60,6 +52,13 @@ function defaultCanvas(size,min,max) {
   slider.setAttribute('min',min);
   slider.setAttribute('max',max);
   gridSizeLabel.textContent = `Grid size: ${size} x ${size * gridRatio}`; 
+};
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function sliderInput() {
+  gridSizeLabel.textContent = `Grid size: ${this.value} x ${this.value * gridRatio}`;
+  currentSize = this.value;
+  changeGridSize(this.value);
 };
 
 function changeGridSize(gridSize) {
@@ -90,7 +89,7 @@ shakeButton.addEventListener('click',shakeCanvas);
 
 function shakeCanvas() {
   const squares = document.querySelectorAll('.grid-square');
-  squares.forEach((square) => square.style.backgroundColor = "")
+  squares.forEach(square => square.style.backgroundColor = "")
   appContainer.classList.add('canvas-shake');
   appContainer.addEventListener('animationend', ()=>{
     appContainer.classList.remove('canvas-shake');
@@ -107,15 +106,17 @@ function mousetrail(e) {
   });
 };
 
+//Change the background colour of the squares
 function setBg(e){
   if (drawMode === "Draw") {
     if(colorChoice === "Classic") {
-      e.target.style.backgroundColor = "rgb(80, 80, 80)";
+      e.target.style.backgroundColor = "rgb(60, 60, 60)";
     } else if (colorChoice === "Rainbow"){
+      //This line generates a random HEX value
       const randomColor = Math.floor(Math.random()*16777215).toString(16);
       e.target.style.backgroundColor = "#" + randomColor;
     } else if (colorChoice === "Tint"){
-      darkenBackground (e);
+      tintBg(e);
     };
   //If drawMode is not 'draw', assume it's 'erase' and remove the backbround colour
   } else {
@@ -123,18 +124,19 @@ function setBg(e){
   };
 };
 
-function darkenBackground(e) {
+//This function is used for the 'Tint' draw mode
+function tintBg(e) {
   //If there's no bg colour on the square, set it to the lightest tint
   if(e.target.style.backgroundColor === "") {
-    e.target.style.backgroundColor = "rgb(200, 200, 200)";
+    e.target.style.backgroundColor = "rgb(180, 180, 180)";
 
   //Otherwise, get the RGB value of the current bg colour and map it to an array
   } else {
     const currnetColor = e.target.style.backgroundColor;
     const currentArray = currnetColor.match(/\d+/g).map(Number);
-  
+
     //If the colour is already the darkest grey, stop tinting
-    if (currnetColor === "rgb(80, 80, 80)") {
+    if (currnetColor === "rgb(60, 60, 60)") {
       return
 
     //Otherwise, if the colour is grey, make it darker
