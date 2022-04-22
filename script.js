@@ -180,7 +180,7 @@ function tintBg(e) {
 
     //If it's a colour other than grey, also set it to the lightest tint
     } else {
-      e.target.style.backgroundColor = "rgb(200, 200, 200)";
+      e.target.style.backgroundColor = "rgb(180, 180, 180)";
     };
   };
 };
