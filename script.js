@@ -7,7 +7,6 @@ const colorSelector = document.querySelector('#color-selector');
 const modeSelector = document.querySelector('#mode-selector');
 const colorControl = document.querySelector('#color-control');
 
-
 //Variable ratio - wanted to experiment with a wide format, has to be whole numbers or we get weird sized squares
 const gridRatio = 2; //Ratio of 1:gridRatio
 
@@ -18,8 +17,6 @@ canvasContainer.onmouseup = () => mouseDown = false;
 let colorChoice = "Classic";
 colorSelector.textContent = colorChoice;
 colorSelector.addEventListener('click',setColor);
-
-
 
 const colorPicker = document.createElement('input');
 colorPicker.setAttribute('type','color','class','picker');
@@ -48,8 +45,6 @@ function setColor () {
   };
   colorSelector.textContent = colorChoice;
 };
-
-
 
 let drawMode = "Draw";
 modeSelector.textContent = drawMode;
