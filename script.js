@@ -144,6 +144,8 @@ function setBg(e){
   };
 };
 
+//function to cycle through a set of swatches one by one
+//this variable references the array index of the colour we want to use
 let colorSelection = 0;
 
 function colourSwatches(e) {

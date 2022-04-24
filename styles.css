@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Mrs+Sheppards&family=Plus+Jakarta+Sans:wght@600;800&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+.footer {
+  margin-top: 30px;
+}
+
+.footer,
+.footer a,
+.footer hover {
+  color: rgba(0, 0, 0, 0.4);
+  font-family: 'Roboto Mono', monospace;
+  font-size: 13px;
+  text-decoration: none;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,6 +28,7 @@ body {
 
 .window {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -21,11 +37,11 @@ body {
 
 .app-container {
   flex: 1;
-  max-width: 1000px;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 1001px;
 }
 
 .app-border {
@@ -90,7 +106,7 @@ body {
 
 .canvas-container {
   flex: 1;
-  height: 450px;
+  height: 451px;
   background-color: rgb(212, 212, 212);
   display: grid;
   border-bottom: 1px solid #0000003e;
