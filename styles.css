@@ -36,7 +36,6 @@ body {
 }
 
 .app-container {
-  flex: 1;
   align-items: center;
   flex-direction: column;
   justify-content: center;
@@ -91,7 +90,6 @@ body {
 .control:active {
   background-color: #ffcb90;
 }
-
 
 .control-container {
   display: flex;
