@@ -1,19 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Mrs+Sheppards&family=Plus+Jakarta+Sans:wght@600;800&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
-
-.footer {
-  margin-top: 30px;
-}
-
-.footer,
-.footer a,
-.footer hover {
-  color: rgba(0, 0, 0, 0.4);
-  font-family: 'Roboto Mono', monospace;
-  font-size: 13px;
-  text-decoration: none;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
 
 * {
   box-sizing: border-box;
@@ -183,4 +169,18 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 input[type="color"]::-webkit-color-swatch {
 	border: 1px solid rgb(212, 212, 212);
   border-radius: 50%;
+}
+
+/* footer styles */
+.footer {
+  margin-top: 30px;
+}
+
+.footer,
+.footer a,
+.footer hover {
+  color: rgba(255, 255, 255, 0.6);
+  font-family: 'Roboto Mono', monospace;
+  font-size: 13px;
+  text-decoration: none;
 }
