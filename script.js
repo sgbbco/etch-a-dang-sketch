@@ -11,8 +11,8 @@ const colorControl = document.querySelector('#color-control');
 const gridRatio = 2; //Ratio of 1:gridRatio
 
 let mouseDown = false
-canvasContainer.onmousedown = () => mouseDown = true;
-canvasContainer.onmouseup = () => mouseDown = false;
+window.onmousedown = () => mouseDown = true;
+window.onmouseup = () => mouseDown = false;
 
 let colorChoice = "Classic";
 colorSelector.textContent = colorChoice;
