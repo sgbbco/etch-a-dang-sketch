@@ -1,44 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Limelight&family=Play:wght@400;700&family=Press+Start+2P&family=Rubik+Pixels&family=Sacramento&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
-  <title>Sketchy McSketchface | ✍️</title>
+  <title>Etch-A-Dang-Sketch | ✍️</title>
 </head>
+
 <body>
   <div class="window">
     <div class="app-container">
-    <div class="app-border">
-      <div class="app-title">Sketchy Mc Sketchface<sup style="font-size: 25px;">&reg;</sup></div>
-      <div class="canvas-shadow"></div>
-      <div class="canvas-container"></div>
-      <div class="settings-container">
-        <div id="color-control" class="control-container" style="width:190px;">
-          <div class="label">Colour</div>
-          <div id="color-selector" class="control"></div>
-        </div>
-        <div class="control-container" style="width:120px;">
-          <div class="label">Mode</div>
-          <div id="mode-selector" class="control"></div>
-        </div>
-        <div class="control-container">
-          <span class="grid-size-label label"></span>
-          <div class="slider-container control">
-            <input id="grid-slider" type="range" class="slider">
+      <div class="app-border">
+        <div class="app-title">Etch A Dang Sketch<sup style="font-size: 25px;">&reg;</sup></div>
+        <div class="canvas-shadow"></div>
+        <div class="canvas-container"></div>
+        <div class="settings-container">
+          <div id="color-control" class="control-container" style="width:190px;">
+            <div class="label">Colour</div>
+            <div id="color-selector" class="control"></div>
           </div>
-        </div>
-        <div class="control-container">
-          <div id="shake-button" class="control">Shake</div>
+          <div class="control-container" style="width:120px;">
+            <div class="label">Mode</div>
+            <div id="mode-selector" class="control"></div>
+          </div>
+          <div class="control-container">
+            <span class="grid-size-label label"></span>
+            <div class="slider-container control">
+              <input id="grid-slider" type="range" class="slider">
+            </div>
+          </div>
+          <div class="control-container">
+            <div class="label">Canvas Background</div>
+            <input type="color" id="background-color-picker" class="control">
+          </div>
+          <div class="control-container">
+            <div class="label">Canvas Border</div>
+            <input type="color" id="border-color-picker" class="control">
+          </div>
+          <div class="control-container">
+            <div id="shake-button" class="control">Shake</div>
+          </div>
         </div>
       </div>
     </div>
-    </div>
-    <div class="footer">MR.ROBOT |•_•| <a href="https://github.com/Mr-Robot-83/etch-a-sketch" target="_blank">GitHub</a></div>
+    <div class="footer">SCOOTER GLASS |(•)\/(•)| <a href="https://github.com/sgbbco/etch-a-dang-sketch"
+        target="_blank">GitHub</a></div>
   </div>
-</div>
+  </div>
 
 </body>
+
 </html>

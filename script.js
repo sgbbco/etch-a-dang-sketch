@@ -181,3 +181,19 @@ function tintBg(e) {
     };
   };
 };
+
+const backgroundColorPicker = document.querySelector('#background-color-picker');
+const borderColorPicker = document.querySelector('#border-color-picker');
+
+backgroundColorPicker.addEventListener('input', changeBackgroundColor);
+borderColorPicker.addEventListener('input', changeBorderColor);
+
+function changeBackgroundColor(e) {
+  const canvasContainer = document.querySelector('.canvas-container');
+  canvasContainer.style.backgroundColor = e.target.value;
+}
+
+function changeBorderColor(e) {
+  const appBorder = document.querySelector('.app-Border');
+  appBorder.style.borderColor = e.target.value;
+}
